@@ -3,9 +3,9 @@ import { Search } from "lucide-react"
 
 const SearchSection = () => {
   return (
-    <div
-      className="p-10 bg-gradient-to-tl from-purple-500 via-orange-500 to-yellow-500 
-      flex flex-col items-center justify-center font-semibold"
+    <div className="bg-[url('/background-splash.svg')] p-10 text-white border-b border-gray-800
+      flex flex-col items-center justify-center font-semibold" 
+      
     >
       <h2 className="text-5xl font-bold">Browse All Templates</h2>
       <p className="mt-2 text-xl">What do you like to create today?</p>

@@ -1,7 +1,7 @@
 'use client'
 import { CheckIcon, ChevronRightIcon, VideoIcon } from "lucide-react";
 import { motion } from "motion/react";
-import TiltedImage from "./TiltImage";
+import TiltedImage from "../components/TiltImage";
 
 export default function HeroSection() {
     const specialFeatures = [
