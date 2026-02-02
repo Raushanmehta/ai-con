@@ -4,7 +4,7 @@ interface Props {
   onSearchInput: (value: string) => void
 }
 
-const SearchSection = ({ onSearchInput }: Props) => {
+const SearchSection = () => {
   return (
     <div
       className="p-10 bg-gradient-to-tl from-purple-500 via-orange-500 to-yellow-500 
