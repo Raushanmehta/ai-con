@@ -1,14 +1,20 @@
 "use client"
 
-import { FileClock, Home, Settings, WalletCards } from "lucide-react"
+import { FileClock, Home, Settings, WalletCards, type LucideIcon } from "lucide-react"
 import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
 
+interface MenuItem {
+  name: string
+  icon: LucideIcon
+  path: string
+}
+
 function Sidebar() {
   const router = useRouter()
-  const path = usePathname()
+  const pathname = usePathname()
 
-  const MenuList = [
+  const menuList: MenuItem[] = [
     { name: "Home", icon: Home, path: "/dashboard" },
     { name: "History", icon: FileClock, path: "/dashboard/history" },
     { name: "Billing", icon: WalletCards, path: "/dashboard/billing" },
@@ -28,8 +34,8 @@ function Sidebar() {
       <hr className="my-4 border-gray-100" />
 
       <div className="mt-10">
-        {MenuList.map((menu, index) => {
-          const isActive = path === menu.path
+        {menuList.map((menu, index) => {
+          const isActive = pathname === menu.path
           const Icon = menu.icon
 
           return (

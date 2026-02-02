@@ -1,8 +1,13 @@
-
+"use client"
+import SearchSection from "./_components/SearchSection"
 
 const Dashboard = () => {
   return (
-    <div>page</div>
+    <div>
+      <SearchSection />
+
+      {/* templatelist */}
+    </div>
   )
 }
 
