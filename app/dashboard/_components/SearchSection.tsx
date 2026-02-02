@@ -1,8 +1,5 @@
 import { Search } from "lucide-react"
 
-interface Props {
-  onSearchInput: (value: string) => void
-}
 
 const SearchSection = () => {
   return (
@@ -18,7 +15,6 @@ const SearchSection = () => {
           <input
             type="text"
             placeholder="Search..."
-            onChange={(e) => onSearchInput(e.target.value)}
             className="flex-1 outline-none bg-transparent text-gray-700 p-1"
           />
 
