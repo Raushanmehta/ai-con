@@ -10,8 +10,8 @@ export default function HeroSection() {
    
     const socialFeature = [
         { icon: <BriefcaseBusiness className="h-4 w-4" />, label: "Business" },
-        { icon: <Globe className="h-4 w-4" />, label: "SEO" },
         { icon: <Youtube className="h-4 w-4" />, label: "YouTube" },
+        { icon: <Globe className="h-4 w-4" />, label: "SEO" },
         { icon: <Code className="h-4 w-4" />, label: "Code" },
         { icon: <Instagram className="h-4 w-4" />, label: "Instagram" },
     ]
@@ -63,7 +63,7 @@ export default function HeroSection() {
                 <button  className="flex items-center gap-2 border text-white border-pink-900 hover:bg-pink-950/50 transition rounded-full px-6 h-11">
                     <Link className="flex gap-2 items-center" href={'https://github.com/Raushanmehta/ai-con'}>
                     <Github strokeWidth={1} />
-                    <span>Documentation</span>
+                    <span>Docs</span>
                     </Link>
                 </button>
             </motion.div>
