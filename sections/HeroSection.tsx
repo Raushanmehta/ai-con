@@ -1,5 +1,5 @@
 'use client'
-import { BriefcaseBusiness, ChevronRightIcon, Code, Github, Globe, Instagram, VideoIcon, Youtube } from "lucide-react";
+import { BriefcaseBusiness, ChevronRightIcon, Code, Github, Globe, Instagram, Youtube } from "lucide-react";
 import { motion } from "motion/react";
 import TiltedImage from "../components/TiltImage";
 import { useRouter } from "next/navigation";
@@ -12,8 +12,8 @@ export default function HeroSection() {
         { icon: <BriefcaseBusiness className="h-4 w-4" />, label: "Business" },
         { icon: <Youtube className="h-4 w-4" />, label: "YouTube" },
         { icon: <Globe className="h-4 w-4" />, label: "SEO" },
-        { icon: <Code className="h-4 w-4" />, label: "Code" },
         { icon: <Instagram className="h-4 w-4" />, label: "Instagram" },
+        { icon: <Code className="h-4 w-4" />, label: "Code" },
     ]
 
     const router = useRouter();
