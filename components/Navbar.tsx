@@ -5,6 +5,8 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
+import { useRouter } from "next/navigation"
+
 
 
 interface NavLink {
@@ -21,6 +23,8 @@ const navLinks: NavLink[] = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
+
+  const router = useRouter();
 
   return (
     <>
@@ -54,7 +58,7 @@ const Navbar = () => {
         </div>
 
         {/* CTA Button */}
-        <button className="hidden md:block px-6 py-2.5 bg-pink-600
+        <button onClick={()=> router.push('/dashboard')} className="hidden md:block px-6 py-2.5 bg-pink-600
         hover:bg-pink-700 text-white rounded-full transition active:scale-95">
           Start free
         </button>

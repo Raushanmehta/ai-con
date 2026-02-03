@@ -1,6 +1,5 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
 import { UserButton } from '@clerk/nextjs'
 import { Search } from 'lucide-react'
 

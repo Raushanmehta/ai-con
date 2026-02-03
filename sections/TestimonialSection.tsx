@@ -1,3 +1,4 @@
+'use client'
 import SectionTitle from "@/components/SectionTitle";
 import TestimonialCard from "@/components/TestimonialCard";
 import { testimonialsData } from "@/data/testimonial";
@@ -5,7 +6,7 @@ import { ITestimonial } from "@/types";
 import Marquee from "react-fast-marquee";
 
 
-export default function TestimonialSection() {
+const TestimonialSection = () => {
     return (
         <div id="testimonials" className="px-4 md:px-16 lg:px-24 xl:px-32 text-white">
             <SectionTitle text1="Testimonials" text2="Don't just take our words" text3="Hear what our users say about us. We're always looking for ways to improve. If you have a positive experience with us, leave a review."  />
@@ -28,3 +29,5 @@ export default function TestimonialSection() {
         </div>
     );
 }
+
+export default TestimonialSection

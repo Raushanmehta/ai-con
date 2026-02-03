@@ -1,19 +1,27 @@
 'use client'
-import { CheckIcon, ChevronRightIcon, VideoIcon } from "lucide-react";
+import { BriefcaseBusiness, ChevronRightIcon, Code, Github, Globe, Instagram, VideoIcon, Youtube } from "lucide-react";
 import { motion } from "motion/react";
 import TiltedImage from "../components/TiltImage";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+
 
 export default function HeroSection() {
-    const specialFeatures = [
-        "10000 credit free trial",
-        "30 days free trial",
-        "Generate any content",
-    ];
+   
+    const socialFeature = [
+        { icon: <BriefcaseBusiness className="h-4 w-4" />, label: "Business" },
+        { icon: <Globe className="h-4 w-4" />, label: "SEO" },
+        { icon: <Youtube className="h-4 w-4" />, label: "YouTube" },
+        { icon: <Code className="h-4 w-4" />, label: "Code" },
+        { icon: <Instagram className="h-4 w-4" />, label: "Instagram" },
+    ]
+
+    const router = useRouter();
 
     return (
         <div className="relative flex flex-col items-center justify-center px-4 md:px-16 lg:px-24 xl:px-32">
             <div className="absolute top-30 -z-10 left-1/4 size-72 bg-pink-600 blur-[300px]"></div>
-            <motion.a href="#!" className="group flex items-center gap-2 rounded-full p-1 pr-3 mt-44 text-pink-100 bg-pink-200/15"
+            <motion.a href="#" className="group flex items-center gap-2 rounded-full p-1 pr-3 mt-44 text-pink-100 bg-pink-200/15"
                 initial={{ y: -20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
@@ -49,25 +57,33 @@ export default function HeroSection() {
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 320, damping: 70, mass: 1 }}
             >
-                <button className="bg-pink-600 hover:bg-pink-700 text-white rounded-full px-7 h-11">
+                <button onClick={()=> router.push('/dashboard')} className="bg-pink-600 hover:bg-pink-700 text-white rounded-full px-7 h-11">
                     Get started
                 </button>
-                <button className="flex items-center gap-2 border text-white border-pink-900 hover:bg-pink-950/50 transition rounded-full px-6 h-11">
-                    <VideoIcon strokeWidth={1} />
-                    <span>Watch demo</span>
+                <button  className="flex items-center gap-2 border text-white border-pink-900 hover:bg-pink-950/50 transition rounded-full px-6 h-11">
+                    <Link className="flex gap-2 items-center" href={'https://github.com/Raushanmehta/ai-con'}>
+                    <Github strokeWidth={1} />
+                    <span>Documentation</span>
+                    </Link>
                 </button>
             </motion.div>
 
-            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-14 mt-12">
-                {specialFeatures.map((feature, index) => (
-                    <motion.p className="flex items-center gap-2" key={index}
+            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-4 mt-12 ">
+                {socialFeature.map((item, index) => (
+                    <motion.p className="flex items-center gap-2  px-4 py-2
+            rounded-xl text-white text-sm
+             backdrop-blur-md
+            border border-white/20
+            shadow-lg 
+            hover:border-pink-700 " key={index}
                         initial={{ y: 30, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.2, duration: 0.3 }}
                     >
-                        <CheckIcon className="size-5 text-pink-600" />
-                        <span className="text-slate-400">{feature}</span>
+                        
+                        <span className="text-slate-400">{item.icon}</span>
+                        <span className="text-slate-400">{item.label}</span>
                     </motion.p>
                 ))}
             </div>
