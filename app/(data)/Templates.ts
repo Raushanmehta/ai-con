@@ -1,23 +1,21 @@
 type FieldType = "input" | "textarea"
 
-interface FormField {
-  label: string
-  field: FieldType
-  name: string
-  required?: boolean
+type Templates = {
+    name: string,
+    desc: string,
+    category: string,
+    icon: string,
+    slug: string,
+    aiPrompt: string,
+    form: {
+        label: string,
+        field: FieldType,
+        name: string,
+        required?: boolean
+    }[]
 }
 
-interface Templates {
-  name: string
-  desc: string
-  category: string
-  icon: string
-  slug: string
-  aiPrompt: string
-  form: FormField[]
-}
-
-export const templates: Templates[] = [
+ const Templates: Templates[] = [
     {
         name:'Blog Title',
         desc:'An AI tool that generate blog title depends on yout blog information',
@@ -122,56 +120,9 @@ export const templates: Templates[] = [
         ]
     },
 
+
     {
-        name: 'Rewrite Article (Plagiarism Free)',
-        desc: 'Use this tool to rewrite existing Article or Blog Post which can bypass AI detectors and also make it plagiarism free.',
-        icon: 'https://cdn-icons-png.flaticon.com/128/3131/3131607.png',
-        category: 'Rewriting Tool',
-        slug: 'rewrite-article',
-        aiPrompt: 'Rewrite give article without any Plagiarism in rich text editor format',
-        form: [
-            {
-                label: '🤖 Provide your Article/Blogpost or any other content to rewrite.',
-                field: 'textarea',
-                name: 'article',
-                required:true
-            }
-        ]
-    },
-    {
-        name: 'Text Improver',
-        desc: 'This handy tool refines your writing, eliminating errors and redundancies for a clear, readable result. It also offers a comprehensive tone analysis and suggests better word choices.',
-        icon: 'https://cdn-icons-png.flaticon.com/128/1686/1686815.png',
-        category: 'Writing Assistant',
-        slug: 'text-improver',
-        aiPrompt: 'Given textToImprove, Rewrite text without any grammar mistake and professionally in rich text editor format',
-        form: [
-            {
-                label: 'Enter text that you want to re-write or improve',
-                field: 'textarea',
-                name: 'textToImprove'
-            }
-        ]
-    },
-    {
-        name: 'Add Emojis to Text',
-        desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',
-        icon: 'https://cdn-icons-png.flaticon.com/128/2584/2584606.png',
-        category: 'blog',
-        slug: 'add-emoji-to-text',
-        aiPrompt: 'Add Emoji to outline text depends on outline and rewrite it in rich text editor format',
-        form: [
-            {
-                label: 'Enter your text to add emojis',
-                field: 'textarea',
-                name: 'outline',
-                required:true
-            }
-        ]
-    },
-    
-    {
-        name: 'Instagram Hash Tag Generator',
+        name: 'Instagram HashTag Generator',
         desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',
         icon: 'https://cdn-icons-png.flaticon.com/128/7045/7045432.png',
         category: 'blog',
@@ -243,6 +194,5 @@ export const templates: Templates[] = [
         ]
     },
 
-
-
 ]
+export default Templates
