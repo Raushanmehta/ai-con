@@ -1,9 +1,9 @@
 "use client"
 
 import { useMemo } from "react"
-import Templates from "@/app/(data)/Templates"
 import TemplateCard from "./TemplateCard"
 import type { TEMPLATE } from "@/types"
+import Templates from "@/app/(data)/Template"
 
 type TemplateListSectionProps = {
   userSearchInput: string
@@ -32,7 +32,7 @@ export default function TemplateListSection({
 
   return (
     <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 p-8">
-      {filteredTemplates.map((template: TEMPLATE) => (
+      {filteredTemplates.map((template: TEMPLATE  ) => (
         <TemplateCard
           key={template.slug}
           {...template}

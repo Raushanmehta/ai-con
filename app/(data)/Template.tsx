@@ -1,21 +1,6 @@
-type FieldType = "input" | "textarea"
+import { TEMPLATE } from '@/types'
 
-type Templates = {
-    name: string,
-    desc: string,
-    category: string,
-    icon: string,
-    slug: string,
-    aiPrompt: string,
-    form: {
-        label: string,
-        field: FieldType,
-        name: string,
-        required?: boolean
-    }[]
-}
-
- const Templates: Templates[] = [
+ const Templates: TEMPLATE[] = [
     {
         name:'Blog Title',
         desc:'An AI tool that generate blog title depends on yout blog information',

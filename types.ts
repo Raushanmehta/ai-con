@@ -64,15 +64,20 @@ export interface SectionProps {
     buttonHref: string;
 }
 
-
+type FieldType = "input" | "textarea"
 export interface TEMPLATE{
     name: string,
-    desc:string,
-    icon:string,
-    category:string,
-    slug:string,
-    aiPrompt:string,
-    form?:FORM[]
+    desc: string,
+    category: string,
+    icon: string,
+    slug: string,
+    aiPrompt: string,
+    form: {
+        label: string,
+        field: FieldType,
+        name: string,
+        required?: boolean
+    }[] 
 }
 
 export interface FORM{
