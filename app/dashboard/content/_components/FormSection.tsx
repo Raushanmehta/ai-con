@@ -14,7 +14,7 @@ function FormSection({selectedTemplate}:PROPS) {
  
 
   return (
-    <div className='p-5 shadow-md border border-gray-800 rounded-lg'>
+    <div className='p-5 w-full shadow-md border border-gray-800 rounded-lg'>
        
         {selectedTemplate?.icon && (
         <Image
